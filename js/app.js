@@ -10,6 +10,7 @@ var pikePlaceMarket = {
   hourlyCupsArray: [], //stores cups sold per hour, as pounds
   hourlyCupsAsPoundsArray: [],
 
+  //calculates customers per hour
   hourlyCust: function () {
     for (var time = 0; time < this.operatingHours.length; time++) {
     var minimum = this.minPerHour;
@@ -21,6 +22,7 @@ var pikePlaceMarket = {
   };
   },
 
+  //calculates pounds sold per hour
   poundsSold: function () {
     for (var time = 0; time < this.operatingHours.length; time++) {
       var averagePounds = this.poundsPerCust;
@@ -31,36 +33,23 @@ var pikePlaceMarket = {
     };
   },
 
+//calculates cups sold per hour returns value as cups and value as pounds
   cupsSold: function () {
     for (var time = 0; time < this.operatingHours.length; time++) {
     var averageCups = this.cupsPerCust;
     var poundsPerCup = 0.05;
-    var maximum = this.maxPerHour;
+    var cupsHourly = this.hourlyCustArray[time] * averageCups;
+    var cupsAsPoundsHourly = cupsHourly * poundsPerCup;
 
-
-    this.hourlyCustArray.push(randomNumber);
+    this.hourlyCupsArray.push(cupsHourly);
+    this.hourlyCupsAsPoundsArray.push(cupsAsPoundsHourly);
   };
   },
-
-
-  // cupsPoundsSold: function () {
-  //
-  // }
-
-
-  // cupsCustomers: function () {},
-  // beansSold: function() {},
-  // allHoursTotals: function () {
-  //   for (var time = 6, time < 21, time++) {
-  //
-  //   }
-  // }
-
-
 }
 
 pikePlaceMarket.hourlyCust();
 pikePlaceMarket.poundsSold();
+pikePlaceMarket.cupsSold();
 
 // var hourlyCustEl = document.createElement('p');
 // hourlyCustEl.textContent = (pikePlaceMarket.hourlyCust());
