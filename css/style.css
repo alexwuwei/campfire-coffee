@@ -1,1 +1,23 @@
-/*my css will be in here*/
+
+h1 h2 h3 {
+  font: 400 45px/0.5 'Courgette', Helvetica, sans-serif;
+}
+
+p {
+  font: 400 14px/1.5 'Average', Times, serif;
+}
+
+* {
+  background-color: #AA6339;
+}
+
+.campfire {
+  float: right;
+  display:inline;
+
+}
+
+/*.hours {
+  display:inline;
+  float: left;
+}*/
