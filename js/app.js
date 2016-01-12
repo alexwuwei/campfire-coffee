@@ -440,46 +440,47 @@ function CoffeeShop (storeName, minPerHour, maxPerHour,cupsPerCust, poundsPerCus
 //
 // }
 //
-// pikePlaceMarket.hourlyCust();
-// pikePlaceMarket.poundsSold();
-// pikePlaceMarket.cupsSold();
-// pikePlaceMarket.renderStoreName();
-// pikePlaceMarket.renderCustData();
-//
-// capitolHill.hourlyCust();
-// capitolHill.poundsSold();
-// capitolHill.cupsSold();
-// capitolHill.renderStoreName();
-// capitolHill.renderCustData();
-//
-// seattlePublicLibrary.hourlyCust();
-// seattlePublicLibrary.poundsSold();
-// seattlePublicLibrary.cupsSold();
-// seattlePublicLibrary.renderStoreName();
-// seattlePublicLibrary.renderCustData();
-//
-// southLakeUnion.hourlyCust();
-// southLakeUnion.poundsSold();
-// southLakeUnion.cupsSold();
-// southLakeUnion.renderStoreName();
-// southLakeUnion.renderCustData();
-//
-// seaTacAirport.hourlyCust();
-// seaTacAirport.poundsSold();
-// seaTacAirport.cupsSold();
-// seaTacAirport.renderStoreName();
-// seaTacAirport.renderCustData();
-//
-// websiteSales.hourlyCust();
-// websiteSales.poundsSold();
-// websiteSales.cupsSold();
-// websiteSales.renderStoreName();
-// websiteSales.renderCustData();
 
-var everett = new CoffeeShop ("Everett",23,34,1.2,2.6);
 
-everett.hourlyCust();
-everett.poundsSold();
-everett.cupsSold();
-everett.renderStoreName();
-everett.renderCustData();
+var pikePlaceMarket = new CoffeeShop ("Pike Place Market",14,55,1.2,3.7);
+var capitolHill = new CoffeeShop ("Capitol Hill",32,48,3.2,0.4);
+var seattlePublicLibrary = new CoffeeShop ("Seattle Public Library",49,75,2.6,0.2);
+var southLakeUnion = new CoffeeShop ("South Lake Union",35,88,1.3,3.7);
+var seaTacAirport = new CoffeeShop ("Sea-Tac Airport",68,124,1.1,2.7);
+var websiteSales = new CoffeeShop ("Website Sales",3,6,0,6.7);
+
+pikePlaceMarket.hourlyCust();
+pikePlaceMarket.poundsSold();
+pikePlaceMarket.cupsSold();
+pikePlaceMarket.renderStoreName();
+pikePlaceMarket.renderCustData();
+
+capitolHill.hourlyCust();
+capitolHill.poundsSold();
+capitolHill.cupsSold();
+capitolHill.renderStoreName();
+capitolHill.renderCustData();
+
+seattlePublicLibrary.hourlyCust();
+seattlePublicLibrary.poundsSold();
+seattlePublicLibrary.cupsSold();
+seattlePublicLibrary.renderStoreName();
+seattlePublicLibrary.renderCustData();
+
+southLakeUnion.hourlyCust();
+southLakeUnion.poundsSold();
+southLakeUnion.cupsSold();
+southLakeUnion.renderStoreName();
+southLakeUnion.renderCustData();
+
+seaTacAirport.hourlyCust();
+seaTacAirport.poundsSold();
+seaTacAirport.cupsSold();
+seaTacAirport.renderStoreName();
+seaTacAirport.renderCustData();
+
+websiteSales.hourlyCust();
+websiteSales.poundsSold();
+websiteSales.cupsSold();
+websiteSales.renderStoreName();
+websiteSales.renderCustData();
