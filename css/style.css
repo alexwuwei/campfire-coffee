@@ -17,6 +17,10 @@ p {
 
 }
 
+table {
+  border-style: dashed;
+}
+
 /*.hours {
   display:inline;
   float: left;
