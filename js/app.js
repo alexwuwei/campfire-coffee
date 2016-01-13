@@ -76,36 +76,8 @@ function CoffeeShop (storeName, minPerHour, maxPerHour,cupsPerCust, poundsPerCus
       trNewEl.appendChild(tdEl);
       //var trowEl = document.createElement('th');
     };
-    // for (var g = 0; g < this.operatingHours.length; g++) {
-    //   var trEl = document.createElement('tr');
-    //   var tdEl = document.createElement('td');
-    //   trEl.appendChild
-    //
-    // };
-
-
     };
 
-    // for (var i = 0; i < this.operatingHours.length; i++) {
-    //   var tdEl = document.createElement('td');
-    //   tdEl.textContent = this.operatingHours[i];
-    //   trEl.appendChild(tdEl);
-    // };
-
-
-  // this.renderStoreName = function () {
-  //   var storeTitleEl = document.createElement('h2');
-  //   storeTitleEl.textContent = (storeName);
-  //   document.body.appendChild(storeTitleEl);
-  // };
-  //
-  // this.renderCustData = function () {
-  //   for (var i = 0; i <= this.operatingHours.length - 1; i++) {
-  //     var hourlyDataEl = document.createElement('p');
-  //     hourlyDataEl.textContent = (this.operatingHours[i] + ': ' + (this.hourlyPoundsArray[i] + this.hourlyCupsAsPoundsArray[i]) + ' lbs [' + this.hourlyCustArray[i] + ' customers, ' + this.hourlyCupsArray[i] + ' cups (' + this.hourlyCupsAsPoundsArray[i] + ' lbs), ' + this.hourlyPoundsArray[i] + ' lbs to-go]');
-  //     document.body.appendChild(hourlyDataEl);
-  //   };
-  // };
 }
 
 var pikePlaceMarket = new CoffeeShop ("Pike Place Market",14,55,1.2,3.7);
@@ -118,8 +90,6 @@ var websiteSales = new CoffeeShop ("Website Sales",3,6,0.01,6.7);
 pikePlaceMarket.hourlyCust();
 pikePlaceMarket.poundsSold();
 pikePlaceMarket.cupsSold();
-//pikePlaceMarket.renderStoreName();
-//pikePlaceMarket.renderCustData();
 pikePlaceMarket.renderStoreData();
 
 capitolHill.hourlyCust();
@@ -131,22 +101,18 @@ seattlePublicLibrary.hourlyCust();
 seattlePublicLibrary.poundsSold();
 seattlePublicLibrary.cupsSold();
 seattlePublicLibrary.renderStoreData();
-
 //
 southLakeUnion.hourlyCust();
 southLakeUnion.poundsSold();
 southLakeUnion.cupsSold();
 southLakeUnion.renderStoreData();
-// southLakeUnion.renderCustData();
 //
 seaTacAirport.hourlyCust();
 seaTacAirport.poundsSold();
 seaTacAirport.cupsSold();
 seaTacAirport.renderStoreData();
-// seaTacAirport.renderCustData();
 //
 websiteSales.hourlyCust();
 websiteSales.poundsSold();
 websiteSales.cupsSold();
 websiteSales.renderStoreData();
-// websiteSales.renderCustData();
