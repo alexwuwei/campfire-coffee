@@ -13,13 +13,13 @@ header ul {
 }
 
 nav {
-  background-color: #404F24;
+  background-color: #4E6172;
 }
 nav ul li {
   display: inline;
   font-weight: bold;
-  width: 100%;
-  background-color: #404F24;
+  width: auto;
+  /*background-color: #404F24;*/
 }
 header img {
     display: inline;
@@ -29,27 +29,42 @@ header img {
     margin-right: 1%;
 }
 
-.spanImage {
-  background-size: 100%;
-}
 
 .locationsContainer {
-    display: inline;
-    width: auto;
+    /*display: inline;
+    width: 100%;*/
 
 }
 .location {
   display: inline-block;
-  width: 16%;
+  width: 12%;
   font-family: sans-serif;
   margin: 1%;
   padding: 1%;
   border: 2px solid green;
   border-radius: 10%;
-  background-color: #668D3C;
+  background-color: #404F24;
 }
 
+.histContainer {
+  /*position: relative;*/
+  display: block;
+}
 
+.mission {
+  clear: both;
+}
+.histImages {
+  /*float:left;*/
+}
+
+.mission p {
+  margin: 2%;
+}
+
+.history {
+  display: block;
+}
 
 table {
   border-style: dashed;
