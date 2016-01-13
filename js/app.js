@@ -49,7 +49,7 @@ function CoffeeShop (storeName, minPerHour, maxPerHour,cupsPerCust, poundsPerCus
 
   this.renderStoreData = function () {
     var grabTableDivEl = document.getElementById('tablePrint'); //grabs table div id
-    var tbleEl = document.createElement('table'); //creates table element in table div id
+    var tbleEl = document.createElement('table'); //creates table element
     document.body.appendChild(tbleEl);
     var trEl = document.createElement('tr'); //creates table row
     tbleEl.appendChild(trEl)
@@ -72,7 +72,7 @@ function CoffeeShop (storeName, minPerHour, maxPerHour,cupsPerCust, poundsPerCus
 
     for (var i = 0; i < this.hourlyPoundsArray.length; i++) {
       var tdEl = document.createElement('td');
-      tdEl.textContent = this.hourlyPoundsArray[i];
+      tdEl.textContent = parseFloat((this.hourlyPoundsArray[i].toFixed(2)));
       trNewEl.appendChild(tdEl);
       //var trowEl = document.createElement('th');
     };
