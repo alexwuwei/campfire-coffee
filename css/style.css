@@ -14,12 +14,12 @@ header ul {
 
 nav {
   background-color: #4E6172;
-  display: flex;
-  flex-wrap: wrap;
+  display: inline;
   width: 100%;
 }
 nav ul li {
   display: inline;
+  justify-content: space-around;
   font-weight: bold;
   width: auto;
   /*background-color: #404F24;*/
@@ -36,6 +36,7 @@ header img {
 .locationsContainer {
     /*display: inline;
     width: 100%;*/
+    justify-content: space-between;
 
 }
 .location {
@@ -58,7 +59,7 @@ header img {
   clear: both;
 }
 .histImages {
-  /*float:left;*/
+  justify-content:
 }
 
 .mission p {
