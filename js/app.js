@@ -155,13 +155,39 @@ function handleNewStoreSubmit (event) {
   var averagePoundsPerCustomer = event.target.avgPounds.value;
 
   //creates a new CoffeeShop object using data from newStoreForm
-  var createStoreObject = new CoffeeShop (newStoreName, minimumCustomerNumber,maximumCustomerNumber, averageCupsPerCustomer, averagePoundsPerCustomer);
+  var createStoreObject = new CoffeeShop (this.newStoreName, this.minimumCustomerNumber,this.maximumCustomerNumber, this.averageCupsPerCustomer, this.averagePoundsPerCustomer);
 
-  //renders new store data on data table
+  //creates new table and renders new store data on data table
+  var newTable = document.createElement('table');
+  document.body.appendChild(newTable);
+
+  var newHeaderRow = document.createElement('tr'); //creates table row
+  newTable.appendChild(newHeaderRow);
+  var newHeaderCell = document.createElement('th'); //creates table header
+  newHeaderCell.textContent = 'Hours';
+  newHeaderRow.appendChild(newHeaderCell);
+  //renders operating hours
+  for (var i = 0; i < createStoreObject.operatingHours.length; i++) {
+    console.log('operating hours looping');
+    var tdEl = document.createElement('th');
+    tdEl.textContent = createStoreObject.operatingHours[i];
+    newHeaderRow.appendChild(tdEl);
+    //var trowEl = document.createElement('th');
+  };
+
   var newRow = document.createElement('tr');
-  tbleEl.appendChild(newRow);
+  newTable.appendChild(newRow);
   var newTableData = document.createElement('td');
-  newTableData.textContent = newStoreName;
+  newTableData.textContent = createStoreObject.storeName;
+  newRow.appendChild(newTableData);
+
+  for (var i = 0; i < createStoreObject.hourlyPoundsArray.length; i++) {
+    var tdEl = document.createElement('td');
+    tdEl.textContent = parseFloat((createStoreObject.hourlyPoundsArray[i].toFixed(2)));
+    newTable.appendChild(tdEl);
+    //var trowEl = document.createElement('th');
+  };
+
 }
 
 //listens for a submit event on html form
