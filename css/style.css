@@ -1,27 +1,79 @@
-
-h1 h2 h3 {
-  font: 400 45px/0.5 'Courgette', Helvetica, sans-serif;
+body {
+  background-color: #8F3B1B;
 }
 
-p {
-  font: 400 14px/1.5 'Average', Times, serif;
-}
-
-* {
-  background-color: #AA6339;
-}
-
-.campfire {
-  float: right;
+header {
+  font-family: sans-serif;
   display:inline;
+  width: 100%;
+}
 
+header ul {
+  width: 100%;
+}
+
+nav {
+  background-color: #4E6172;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+nav ul li {
+  display: inline;
+  font-weight: bold;
+  width: auto;
+  /*background-color: #404F24;*/
+}
+header img {
+    display: inline;
+    height: 3%;
+    width: 3%;
+    float:left;
+    margin-right: 1%;
+}
+
+
+.locationsContainer {
+    /*display: inline;
+    width: 100%;*/
+
+}
+.location {
+  display: inline-block;
+  width: 12%;
+  font-family: sans-serif;
+  margin: 1%;
+  padding: 1%;
+  border: 2px solid green;
+  border-radius: 10%;
+  background-color: #404F24;
+}
+
+.histContainer {
+  /*position: relative;*/
+  display: block;
+}
+
+.mission {
+  clear: both;
+}
+.histImages {
+  /*float:left;*/
+}
+
+.mission p {
+  margin: 2%;
+}
+
+.history {
+  display: block;
 }
 
 table {
   border-style: dashed;
 }
 
-/*.hours {
-  display:inline;
-  float: left;
-}*/
+.Resources ul {
+  list-style-type: none;
+  padding-left: 1%;
+}

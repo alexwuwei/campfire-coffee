@@ -70,12 +70,30 @@ function CoffeeShop (storeName, minPerHour, maxPerHour,cupsPerCust, poundsPerCus
     trNewDataEl.textContent = this.storeName;
     trNewEl.appendChild(trNewDataEl);
 
+    //renders totals to table
     for (var i = 0; i < this.hourlyPoundsArray.length; i++) {
       var tdEl = document.createElement('td');
       tdEl.textContent = parseFloat((this.hourlyPoundsArray[i].toFixed(2)));
       trNewEl.appendChild(tdEl);
       //var trowEl = document.createElement('th');
     };
+
+    var combinedTotals = 0;
+
+    for (var t = 0; t <this.hourlyPoundsArray.length; t++) {
+      combinedTotals += this.hourlyPoundsArray[t];
+    }
+
+    //renders combined total row to table
+    var lastRow = document.createElement('tr');
+    tbleEl.appendChild(lastRow);
+    var lastRowTd = document.createElement('td');
+    lastRowTd.textContent = 'Daily Store Totals'
+    lastRow.appendChild(lastRowTd);
+    var lastRowTotals = document.createElement('td');
+    lastRowTotals.textContent = parseFloat((combinedTotals.toFixed(2)));
+    lastRow.appendChild(lastRowTotals);
+
     };
 
 }
