@@ -134,3 +134,24 @@ websiteSales.hourlyCust();
 websiteSales.poundsSold();
 websiteSales.cupsSold();
 websiteSales.renderStoreData();
+
+var newStoreForm = document.getElementById('newStoreForm');
+
+function handleNewStoreSubmit (event) {
+  console.log(event);
+  event.preventDefault();
+
+  if (!event.target.storeName.value || !event.target.minCustomer.value || !event.target.maxCustomer.value || !event.target.avgCups.value || !event.target.avgPounds.value) {
+    return alert ('Please fill out all fields!');
+  }
+
+  var newStoreName = event.target.storeName.value;
+  var minimumCustomerNumber = event.target.minCustomer.value;
+  var maximumCustomerNumber = event.target.maxCustomer.value;
+  var averageCupsPerCustomer = event.target.avgCups.value;
+  var averagePoundsPerCustomer = event.target.avgPounds.value;
+
+
+}
+
+newStoreForm.addEventListener('submit', handleNewStoreSubmit, false);
