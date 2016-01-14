@@ -139,54 +139,29 @@ websiteSales.renderStoreData();
 var newStoreForm = document.getElementById('newStoreForm');
 //function that handles the submission of a new store
 function handleNewStoreSubmit (event) {
-  console.log(event); //for debugging purposes
+  console.log(event.target.storeName.value); //for debugging purposes
   event.preventDefault(); //prevents default browser behaviour
+
+  //variables below grab the form values for later use
+  var newStoreName = event.target.storeName.value;
+  var minimumCustomerNumber = parseFloat(event.target.minCustomer.value);
+  var maximumCustomerNumber = parseFloat(event.target.maxCustomer.value);
+  var averageCupsPerCustomer = parseFloat(event.target.avgCups.value);
+  var averagePoundsPerCustomer = parseFloat(event.target.avgPounds.value);
 
   //Makes sure that all fields are filled out
   if (!event.target.storeName.value || !event.target.minCustomer.value || !event.target.maxCustomer.value || !event.target.avgCups.value || !event.target.avgPounds.value) {
     return alert ('Please fill out all fields!');
   };
 
-  //variables below grab the form values for later use
-  var newStoreName = event.target.storeName.value;
-  var minimumCustomerNumber = event.target.minCustomer.value;
-  var maximumCustomerNumber = event.target.maxCustomer.value;
-  var averageCupsPerCustomer = event.target.avgCups.value;
-  var averagePoundsPerCustomer = event.target.avgPounds.value;
-
   //creates a new CoffeeShop object using data from newStoreForm
-  var createStoreObject = new CoffeeShop (this.newStoreName, this.minimumCustomerNumber,this.maximumCustomerNumber, this.averageCupsPerCustomer, this.averagePoundsPerCustomer);
+  var createStoreObject = new CoffeeShop (newStoreName, minimumCustomerNumber,maximumCustomerNumber, averageCupsPerCustomer, averagePoundsPerCustomer);
 
-  //creates new table and renders new store data on data table
-  var newTable = document.createElement('table');
-  document.body.appendChild(newTable);
-
-  var newHeaderRow = document.createElement('tr'); //creates table row
-  newTable.appendChild(newHeaderRow);
-  var newHeaderCell = document.createElement('th'); //creates table header
-  newHeaderCell.textContent = 'Hours';
-  newHeaderRow.appendChild(newHeaderCell);
-  //renders operating hours
-  for (var i = 0; i < createStoreObject.operatingHours.length; i++) {
-    console.log('operating hours looping');
-    var tdEl = document.createElement('th');
-    tdEl.textContent = createStoreObject.operatingHours[i];
-    newHeaderRow.appendChild(tdEl);
-    //var trowEl = document.createElement('th');
-  };
-
-  var newRow = document.createElement('tr');
-  newTable.appendChild(newRow);
-  var newTableData = document.createElement('td');
-  newTableData.textContent = createStoreObject.storeName;
-  newRow.appendChild(newTableData);
-
-  for (var i = 0; i < createStoreObject.hourlyPoundsArray.length; i++) {
-    var tdEl = document.createElement('td');
-    tdEl.textContent = parseFloat((createStoreObject.hourlyPoundsArray[i].toFixed(2)));
-    newTable.appendChild(tdEl);
-    //var trowEl = document.createElement('th');
-  };
+  createStoreObject.hourlyCust();
+  createStoreObject.poundsSold();
+  createStoreObject.cupsSold();
+  createStoreObject.renderStoreData();
+  console.log(createStoreObject);
 
 }
 
