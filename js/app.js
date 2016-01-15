@@ -134,3 +134,36 @@ websiteSales.hourlyCust();
 websiteSales.poundsSold();
 websiteSales.cupsSold();
 websiteSales.renderStoreData();
+
+//variable that grabs the newStoreForm form
+var newStoreForm = document.getElementById('newStoreForm');
+//function that handles the submission of a new store
+function handleNewStoreSubmit (event) {
+  console.log(event.target.storeName.value); //for debugging purposes
+  event.preventDefault(); //prevents default browser behaviour
+
+  //variables below grab the form values for later use
+  var newStoreName = event.target.storeName.value;
+  var minimumCustomerNumber = parseFloat(event.target.minCustomer.value);
+  var maximumCustomerNumber = parseFloat(event.target.maxCustomer.value);
+  var averageCupsPerCustomer = parseFloat(event.target.avgCups.value);
+  var averagePoundsPerCustomer = parseFloat(event.target.avgPounds.value);
+
+  //Makes sure that all fields are filled out
+  if (!event.target.storeName.value || !event.target.minCustomer.value || !event.target.maxCustomer.value || !event.target.avgCups.value || !event.target.avgPounds.value) {
+    return alert ('Please fill out all fields!');
+  };
+
+  //creates a new CoffeeShop object using data from newStoreForm
+  var createStoreObject = new CoffeeShop (newStoreName, minimumCustomerNumber,maximumCustomerNumber, averageCupsPerCustomer, averagePoundsPerCustomer);
+
+  createStoreObject.hourlyCust();
+  createStoreObject.poundsSold();
+  createStoreObject.cupsSold();
+  createStoreObject.renderStoreData();
+  console.log(createStoreObject);
+
+}
+
+//listens for a submit event on html form
+newStoreForm.addEventListener('submit', handleNewStoreSubmit, false);

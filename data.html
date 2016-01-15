@@ -6,7 +6,7 @@
     <title>Campfire Coffee - Data View</title>
       <link href="css/style.css" rel="stylesheet" type="text/css">
   </head>
-  <body>
+  <body id="data-body">
     <h1>Campfire Coffee - Sales Data Visualization</h1>
     <div id="tablePrint">
 
@@ -14,17 +14,17 @@
 
     <form id="newStoreForm">
       <fieldset>
-        <legend>Enter New Store</legend>
-        <label for="storeName">Store Name: </label>
-        <input name="storeName" type="text" size="30">
-        <label for="minCustomer">Minimum Customers Number: </label>
-        <input name="minCustomer" type="text" size="10">
-        <label for="maxCustomer">Maximum Customers Number: </label>
-        <input name="maxCustomer" type="text" size="10">
-        <label for="avgCups">Average Number Cups: </label>
-        <input name="avgCups" type="text" size="10">
-        <label for="avgPounds">Average Pounds: </label>
-        <input name="avgPounds" type="text" size="10">
+        <legend><strong>Enter New Store</strong> (WILL DISPLAY AT THE BOTTOM)</legend>
+        <label for="storeName"><strong>Store Name: </strong></label>
+        <input name="storeName" type="text" size="30" >
+        <label for="minCustomer"><strong>Minimum Customers: </strong></label>
+        <input name="minCustomer" type="text" size="10" >
+        <label for="maxCustomer"><strong>Maximum Customers: </strong></label>
+        <input name="maxCustomer" type="text" size="10" >
+        <label for="avgCups"><strong>Average Cups: </strong></label>
+        <input name="avgCups" type="text" size="10" >
+        <label for="avgPounds"><strong>Average Pounds: </strong></label>
+        <input name="avgPounds" type="text" size="10" >
         <button id="newStoreBtn" type="submit">Submit New Store</button>
       </fieldset>
     </form>

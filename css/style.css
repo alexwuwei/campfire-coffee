@@ -78,3 +78,38 @@ table {
   list-style-type: none;
   padding-left: 1%;
 }
+
+table {
+  border: 1px solid black;
+  color: black;
+  background-color: green;
+  padding: 1px;
+  font-family: monospace;
+  width: 95%;
+  margin-top: 5px;
+  font-size: 16px;
+  margin-left: 2%;
+}
+
+
+#newStoreForm {
+  background-color: green;
+  font-family: sans-serif;
+  width: 95%;
+  padding: 1px;
+  border: none;
+  margin-left: 2%;
+}
+
+#data-body {
+  background-image:url(http://charlestoncoffeeexchange.com/wp-content/uploads/2013/05/coffee-bean-extract1.jpg);
+  opacity: 0.9;
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
+input {
+  border-radius: 4%;
+}
