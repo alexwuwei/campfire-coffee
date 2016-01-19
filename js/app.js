@@ -23,16 +23,6 @@ function CoffeeShop (storeName, minPerHour, maxPerHour,cupsPerCust, poundsPerCus
   };
 };
 
-  //calculates pounds sold per hour
-  this.poundsSold = function () {
-    for (var time = 0; time < this.operatingHours.length; time++) {
-      var averagePounds = this.poundsPerCust;
-      var hourlyPounds = this.hourlyCustArray[time] * averagePounds;
-
-      this.hourlyPoundsArray.push(hourlyPounds);
-      console.log("hello, its working");
-    };
-  };
 
 //calculates cups sold per hour returns value as cups and value as pounds
   this.cupsSold = function () {
@@ -44,6 +34,17 @@ function CoffeeShop (storeName, minPerHour, maxPerHour,cupsPerCust, poundsPerCus
 
     this.hourlyCupsArray.push(cupsHourly);
     this.hourlyCupsAsPoundsArray.push(cupsAsPoundsHourly);
+  };
+};
+
+//calculates pounds sold per hour
+this.poundsSold = function () {
+  for (var time = 0; time < this.operatingHours.length; time++) {
+    var averagePounds = this.poundsPerCust;
+    var hourlyPounds = this.hourlyCustArray[time] * averagePounds;
+
+    this.hourlyPoundsArray.push(hourlyPounds);
+    console.log("hello, its working");
   };
 };
 
@@ -79,10 +80,16 @@ function CoffeeShop (storeName, minPerHour, maxPerHour,cupsPerCust, poundsPerCus
     };
 
     var combinedTotals = 0;
-
+    var combinedCupsTotal = 0;
+    var combinedCupsAsPoundsTotal = 0;
+    var finalTotal = combinedTotals + combinedCupsAsPoundsTotal;
+    //calculates daily totals for pounds and cups
     for (var t = 0; t <this.hourlyPoundsArray.length; t++) {
       combinedTotals += this.hourlyPoundsArray[t];
+      combinedCupsTotal += this.hourlyCupsArray[t];
+      combinedCupsAsPoundsTotal += this.hourlyCupsAsPoundsArray[t];
     }
+
 
     //renders combined total row to table
     var lastRow = document.createElement('tr');
@@ -93,6 +100,19 @@ function CoffeeShop (storeName, minPerHour, maxPerHour,cupsPerCust, poundsPerCus
     var lastRowTotals = document.createElement('td');
     lastRowTotals.textContent = parseFloat((combinedTotals.toFixed(2)));
     lastRow.appendChild(lastRowTotals);
+    var dailyCupsTd = document.createElement('td');
+    dailyCupsTd.textContent = 'Daily Cups Total';
+    lastRow.appendChild(dailyCupsTd);
+    var dailyCupsTotal = document.createElement('td')
+    dailyCupsTotal.textContent = parseFloat((combinedCupsTotal.toFixed(2)));
+    lastRow.appendChild(dailyCupsTotal);
+    // var cupsToBagsRatio = document.createElement('td');
+    // cupsToBagsRatio.textContent = 'Cups to Bags Ratio (in pounds)';
+    // lastRow.appendChild(cupsToBagsRatio);
+    // var cupsToBagsFormula = document.createElement('td')
+    // cupsToBagsFormula.textContent = ((combinedCupsAsPoundsTotal * 100) / finalTotal);
+    // lastRow.appendChild(cupsToBagsFormula);
+
 
     };
 
